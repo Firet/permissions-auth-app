@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../App";
+import { useEffect } from "react";
 
 export default function LoginPage() {
     let navigate = useNavigate();
@@ -8,19 +9,23 @@ export default function LoginPage() {
 
     let from = location.state?.from?.pathname || "/";
 
+    useEffect(() => {
+        if (auth.user) {
+            navigate('/');
+        }
+    }, [auth.user, navigate]);
+
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         let formData = new FormData(event.currentTarget);
         let username = formData.get("username") as string;
 
-        auth.signin(username, () => {
-            navigate('/public', { replace: true });
-        });
-
-        // auth.admin(() => {
-        //     navigate('/protected', { replace: true });
-        // });
+        if (username) {
+            auth.signin(username, () => {
+                navigate('/public', { replace: true });
+            });
+        }
     }
 
     return (
