@@ -26,11 +26,28 @@ export default function App() {
           }
         />
         <Route
+          path="/3"
+          element={
+            <>
+              <div>3</div>
+              <PublicPage />
+            </>
+          }
+        />
+        <Route
           path="/protected"
           element={
             <RequireAuth>
               <ProtectedPage />
             </RequireAuth>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <RequireAdminAuth>
+              <div>tenés acceso</div>
+            </RequireAdminAuth>
           }
         />
         {/* </Route> */}
@@ -115,13 +132,16 @@ function RequireAuth({ children }: { children: JSX.Element }) {
     // than dropping them off on the home page.
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
-  // if (auth.user !== 'admin') {
 
-  //   return <Navigate to="/public" />;
-  // }
-  // if (auth.user) {
-  //   return <Navigate to="/public" />;
-  // }
+  return children;
+}
 
+
+function RequireAdminAuth({ children }: { children: JSX.Element }) {
+  let auth = useAuth();
+
+  if (auth.user !== 'admin') {
+    return <div> No tenés acceso </div>;
+  }
   return children;
 }

@@ -17,6 +17,9 @@ export default function PublicPage() {
           <li>
             <Link to="/protected">Protected Page (admin) </Link>
           </li>
+          <li>
+            <Link to="/admin"> ir a admin </Link>
+          </li>
         </ul>
 
         <Outlet />
