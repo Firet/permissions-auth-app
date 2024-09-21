@@ -10,24 +10,32 @@ import { fakeAuthProvider } from "./auth";
 import PublicPage from "./pages/PublicPage";
 import ProtectedPage from "./pages/ProtectedPage";
 import LoginPage from "./pages/LoginPage";
-import Layout from "./layout";
+// import Layout from "./layout";
 
 export default function App() {
   return (
     <AuthProvider>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<PublicPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route
-            path="/protected"
-            element={
-              <RequireAuth>
-                <ProtectedPage />
-              </RequireAuth>
-            }
-          />
-        </Route>
+        {/* <Route element={<Layout />}> */}
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/public"
+          element={
+            <RequireAuth>
+              <PublicPage />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/protected"
+          element={
+            <RequireAuth>
+              <ProtectedPage />
+            </RequireAuth>
+          }
+        />
+        {/* </Route> */}
       </Routes>
     </AuthProvider>
   );
@@ -36,6 +44,7 @@ export default function App() {
 interface AuthContextType {
   user: any;
   signin: (user: string, callback: VoidFunction) => void;
+  admin: (callback: VoidFunction) => void;
   signout: (callback: VoidFunction) => void;
 }
 
@@ -51,6 +60,13 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     });
   };
 
+  let admin = (callback: VoidFunction) => {
+    return fakeAuthProvider.signin(() => {
+      setUser('admin');
+      callback();
+    });
+  };
+
   let signout = (callback: VoidFunction) => {
     return fakeAuthProvider.signout(() => {
       setUser(null);
@@ -58,7 +74,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     });
   };
 
-  let value = { user, signin, signout };
+  let value = { user, signin, admin, signout };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
@@ -100,6 +116,12 @@ function RequireAuth({ children }: { children: JSX.Element }) {
     // than dropping them off on the home page.
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
+  // if (auth.user === 'admin') {
+  //   return <Navigate to="/protected" />;
+  // }
+  // if (auth.user) {
+  //   return <Navigate to="/public" />;
+  // }
 
   return children;
 }
