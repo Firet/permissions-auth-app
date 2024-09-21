@@ -58,9 +58,9 @@ export default function App() {
 }
 
 interface AuthContextType {
-  user: any;
+  authState: any,
+  user: string | null;
   signin: (user: string, callback: VoidFunction) => void;
-  admin: (callback: VoidFunction) => void;
   signout: (callback: VoidFunction) => void;
 }
 
@@ -68,17 +68,18 @@ let AuthContext = React.createContext<AuthContextType>(null!);
 
 function AuthProvider({ children }: { children: React.ReactNode }) {
   let [user, setUser] = React.useState<any>(null);
+  const [authState, setAuthState] = React.useState({
+    isAuthenticated: false,
+    isAdmin: false,
+  });
 
   let signin = (newUser: string, callback: VoidFunction) => {
     return fakeAuthProvider.signin(() => {
       setUser(newUser);
-      callback();
-    });
-  };
-
-  let admin = (callback: VoidFunction) => {
-    return fakeAuthProvider.signin(() => {
-      setUser('admin');
+      setAuthState({
+        isAuthenticated: true,
+        isAdmin: newUser === 'admin' ? true : false,
+      });
       callback();
     });
   };
@@ -86,11 +87,15 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
   let signout = (callback: VoidFunction) => {
     return fakeAuthProvider.signout(() => {
       setUser(null);
+      setAuthState({
+        isAuthenticated: false,
+        isAdmin: false
+      });
       callback();
     });
   };
 
-  let value = { user, signin, admin, signout };
+  let value = { authState, user, signin, signout };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
@@ -103,6 +108,8 @@ export function AuthStatus() {
   let auth = useAuth();
   let navigate = useNavigate();
 
+
+  console.log('authState ', auth)
   if (!auth.user) {
     return <p>You are not logged in.</p>;
   }
@@ -140,7 +147,7 @@ function RequireAuth({ children }: { children: JSX.Element }) {
 function RequireAdminAuth({ children }: { children: JSX.Element }) {
   let auth = useAuth();
 
-  if (auth.user !== 'admin') {
+  if (!auth.authState.isAdmin) {
     return <div> No tenés acceso </div>;
   }
   return children;
