@@ -74,11 +74,20 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
   });
 
   let signin = (newUser: string, callback: VoidFunction) => {
+    setUser(newUser);
+    if (newUser === 'admin') {
+      return fakeAuthProvider.signinAdmin(() => {
+        setAuthState({
+          isAuthenticated: fakeAuthProvider.isAuthenticated,
+          isAdmin: fakeAuthProvider.isAdmin,
+        });
+        callback();
+      });
+    }
     return fakeAuthProvider.signin(() => {
-      setUser(newUser);
       setAuthState({
-        isAuthenticated: true,
-        isAdmin: newUser === 'admin' ? true : false,
+        isAuthenticated: fakeAuthProvider.isAuthenticated,
+        isAdmin: fakeAuthProvider.isAdmin,
       });
       callback();
     });
@@ -88,8 +97,8 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     return fakeAuthProvider.signout(() => {
       setUser(null);
       setAuthState({
-        isAuthenticated: false,
-        isAdmin: false
+        isAuthenticated: fakeAuthProvider.isAuthenticated,
+        isAdmin: fakeAuthProvider.isAdmin,
       });
       callback();
     });
@@ -108,8 +117,6 @@ export function AuthStatus() {
   let auth = useAuth();
   let navigate = useNavigate();
 
-
-  console.log('authState ', auth)
   if (!auth.user) {
     return <p>You are not logged in.</p>;
   }
