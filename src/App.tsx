@@ -17,14 +17,12 @@ export default function App() {
     <AuthProvider>
       <Routes>
         {/* <Route element={<Layout />}> */}
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/" element={<PublicPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
           path="/public"
           element={
-            <RequireAuth>
-              <PublicPage />
-            </RequireAuth>
+            <PublicPage />
           }
         />
         <Route
@@ -36,6 +34,7 @@ export default function App() {
           }
         />
         {/* </Route> */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </AuthProvider>
   );
@@ -116,8 +115,9 @@ function RequireAuth({ children }: { children: JSX.Element }) {
     // than dropping them off on the home page.
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
-  // if (auth.user === 'admin') {
-  //   return <Navigate to="/protected" />;
+  // if (auth.user !== 'admin') {
+
+  //   return <Navigate to="/public" />;
   // }
   // if (auth.user) {
   //   return <Navigate to="/public" />;
