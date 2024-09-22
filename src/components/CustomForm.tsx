@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
-// import { ErrorMessage } from '@hookform/error-message'
 import { useNavigate } from "react-router-dom";
+import { TextField, Button } from '@mui/material';
 import { useAuth } from "../App";
 
 interface IFormInput {
@@ -23,44 +23,36 @@ export default function CustomForm() {
         }
     })
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <label>Username: </label>
-            <input
-                {...register("userName", {
-                    required: 'Username is required',
-                    minLength: { value: 4, message: "Must exceed 3 characters" },
-                    maxLength: { value: 21, message: "Must have less than 20 characters" }
-                })}
-                aria-invalid={errors.userName ? "true" : "false"}
-            />
-            {errors.userName?.type === "required" && (
-                <p role="alert">{errors.userName.message}</p>
-            )}
-            {errors.userName?.type === "minLength" && (
-                <p role="alert">{errors.userName.message}</p>
-            )}
-            {errors.userName?.type === "maxLength" && (
-                <p role="alert">{errors.userName.message}</p>
-            )}
-            <label>Password: </label>
-            <input
-                {...register("password", {
-                    required: 'Password is required',
-                    minLength: { value: 4, message: "Must exceed 3 characters" },
-                    maxLength: { value: 21, message: "Must have less than 20 characters" }
-                })}
-                aria-invalid={errors.userName ? "true" : "false"}
-            />
-            {errors.password?.type === "required" && (
-                <p role="alert">{errors.password.message}</p>
-            )}
-            {errors.password?.type === "minLength" && (
-                <p role="alert">{errors.password.message}</p>
-            )}
-            {errors.password?.type === "maxLength" && (
-                <p role="alert">{errors.password.message}</p>
-            )}
-            <button type="submit">Log In</button>
-        </form>
+        <form 
+            onSubmit={handleSubmit(onSubmit)}>  
+
+        <TextField
+          label="Username"  
+  
+          {...register("userName", {
+            required: 'Username is required',
+            minLength: { value: 4, message: "Must exceed 3 characters" },
+            maxLength: { value: 21, message: "Must have less than 20 characters" }
+          })}
+          error={!!errors.userName}
+          helperText={errors.userName?.message}
+          
+        />
+        <TextField
+          label="Password"
+          type="password"
+          {...register("password", {
+            required: 'Password is required',
+            minLength: { value: 4, message: "Must exceed 3 characters" },
+            maxLength: { value: 21, message: "Must have less than 20 characters" }
+          })}
+          error={!!errors.password}
+          helperText={errors.password?.message}
+      
+        />
+        <Button type="submit" variant="contained" color="primary">
+          Log In
+        </Button>
+      </form>
     )
 }
