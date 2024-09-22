@@ -1,8 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
 import { AuthStatus, useAuth } from "../App";
+import { useEffect } from "react";
+import fetchData from "../utils/fetch";
 
 export default function PublicPage() {
   let auth = useAuth();
+
+  useEffect(() => {
+    fetchData('');
+  }, []);
+
   return (
     <>
       <h3>Public</h3>
