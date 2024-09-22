@@ -1,14 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
 import { AuthStatus, useAuth } from "../App";
-import { useEffect } from "react";
-import fetchData from "../utils/fetch";
+import Dashboard from "../components/Dashboard/Dashbaord";
 
 export default function PublicPage() {
   let auth = useAuth();
-
-  useEffect(() => {
-    fetchData('');
-  }, []);
 
   return (
     <>
@@ -28,6 +23,7 @@ export default function PublicPage() {
             <Link to="/admin"> ir a admin </Link>
           </li>
         </ul>
+        <Dashboard />
 
         <Outlet />
       </div>
