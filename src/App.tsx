@@ -10,6 +10,7 @@ import { fakeAuthProvider } from "./auth";
 import PublicPage from "./pages/PublicPage";
 import ProtectedPage from "./pages/ProtectedPage";
 import LoginPage from "./pages/LoginPage";
+import { AuthContextType } from "./types/AuthContextType";
 // import Layout from "./layout";
 
 export default function App() {
@@ -55,13 +56,6 @@ export default function App() {
       </Routes>
     </AuthProvider>
   );
-}
-
-interface AuthContextType {
-  authState: { isAuthenticated: boolean, isAdmin: boolean },
-  user: string | null;
-  signin: (user: string, callback: VoidFunction) => void;
-  signout: (callback: VoidFunction) => void;
 }
 
 const AuthContext = React.createContext<AuthContextType>(null!);
