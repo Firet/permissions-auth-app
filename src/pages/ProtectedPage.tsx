@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { AuthStatus, useAuth } from "../App";
+import Dashboard from "../components/Dashboard/Dashbaord";
 
 export default function ProtectedPage() {
   let auth = useAuth();
@@ -24,6 +25,8 @@ export default function ProtectedPage() {
             <Link to="/admin"> ir a admin </Link>
           </li>
         </ul>
+
+        <Dashboard />
 
         <Outlet />
       </div>

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { connect } from "react-redux";
+import { useAuth } from "../../App";
 
 export const User = ({ name, email, id, onEdit, onDelete }) => {
     const [isEdit, setIsEdit] = useState(false);
-
+    const auth = useAuth();
+    const isAdmin = auth.authState.isAdmin;
     const handleEdit = () => {
         setIsEdit(!isEdit);
     };
@@ -30,10 +32,12 @@ export const User = ({ name, email, id, onEdit, onDelete }) => {
                 <div className="user">
                     <span className="user-name">{name}</span>
                     <span className="user-email">{email}</span>
-                    <div>
-                        <button onClick={handleEdit}>Edit</button>
-                        <button onClick={handleDelete}>Delete</button>
-                    </div>
+                    {isAdmin && (
+                        <div>
+                            <button onClick={handleEdit}>Edit</button>
+                            <button onClick={handleDelete}>Delete</button>
+                        </div>
+                    )}
                 </div>
             )}
         </div>
