@@ -11,8 +11,8 @@ interface IFormInput {
 
 
 export default function CustomForm() {
-    let navigate = useNavigate();
-    let auth = useAuth();
+    const navigate = useNavigate();
+    const auth = useAuth();
     const { register, formState: { errors }, handleSubmit } = useForm<IFormInput>();
 
     const onSubmit: SubmitHandler<IFormInput> = (data => {

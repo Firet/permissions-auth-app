@@ -5,8 +5,8 @@ import CustomForm from "../components/CustomForm";
 import styled from '@emotion/styled';
 
 export default function LoginPage() {
-    let navigate = useNavigate();
-    let auth = useAuth();
+    const navigate = useNavigate();
+    const auth = useAuth();
 
     const FormContainer = styled.div`
         display: flex;
@@ -15,7 +15,7 @@ export default function LoginPage() {
         justify-content: center;
         width: 100%; 
         height: 100vh;
-`;
+    `;
 
     useEffect(() => {
         if (auth.user) {

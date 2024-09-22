@@ -3,7 +3,7 @@ import { AuthStatus, useAuth } from "../App";
 import Dashboard from "../components/Dashboard/Dashbaord";
 
 export default function PublicPage() {
-  let auth = useAuth();
+  const auth = useAuth();
 
   return (
     <>

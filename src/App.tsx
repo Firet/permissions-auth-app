@@ -64,16 +64,16 @@ interface AuthContextType {
   signout: (callback: VoidFunction) => void;
 }
 
-let AuthContext = React.createContext<AuthContextType>(null!);
+const AuthContext = React.createContext<AuthContextType>(null!);
 
 function AuthProvider({ children }: { children: React.ReactNode }) {
-  let [user, setUser] = React.useState<any>(null);
+  const [user, setUser] = React.useState<any>(null);
   const [authState, setAuthState] = React.useState({
     isAuthenticated: false,
     isAdmin: false,
   });
 
-  let signin = (newUser: string, callback: VoidFunction) => {
+  const signin = (newUser: string, callback: VoidFunction) => {
     setUser(newUser);
     if (newUser === 'admin') {
       return fakeAuthProvider.signinAdmin(() => {
@@ -93,7 +93,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     });
   };
 
-  let signout = (callback: VoidFunction) => {
+  const signout = (callback: VoidFunction) => {
     return fakeAuthProvider.signout(() => {
       setUser(null);
       setAuthState({
@@ -104,7 +104,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     });
   };
 
-  let value = { authState, user, signin, signout };
+  const value = { authState, user, signin, signout };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
@@ -114,8 +114,8 @@ export function useAuth() {
 }
 
 export function AuthStatus() {
-  let auth = useAuth();
-  let navigate = useNavigate();
+  const auth = useAuth();
+  const navigate = useNavigate();
 
   if (!auth.user) {
     return <p>You are not logged in.</p>;
@@ -136,8 +136,8 @@ export function AuthStatus() {
 }
 
 function RequireAuth({ children }: { children: JSX.Element }) {
-  let auth = useAuth();
-  let location = useLocation();
+  const auth = useAuth();
+  const location = useLocation();
 
   if (!auth.user) {
     // Redirect them to the /login page, but save the current location they were
@@ -152,7 +152,7 @@ function RequireAuth({ children }: { children: JSX.Element }) {
 
 
 function RequireAdminAuth({ children }: { children: JSX.Element }) {
-  let auth = useAuth();
+  const auth = useAuth();
 
   if (!auth.authState.isAdmin) {
     return <div> No tenés acceso </div>;
