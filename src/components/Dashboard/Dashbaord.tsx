@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { addUser, deleteUserWithId, editUser } from "../../redux/actions/userActions";
 import { AddUser } from "../Users/AddUser";
-import User from "../Users/User";
+import UserCard from "../Users/UserCard";
 import { useAuth } from "../../hooks/useAuth";
 
     function Dashbaord({ dispatch, loading, users, hasErrors }) {
@@ -26,7 +26,7 @@ import { useAuth } from "../../hooks/useAuth";
         if (hasErrors) return <p>Unable to display users</p>;
         if (users) {
             return users.map((user) => (
-                <User
+                <UserCard
                     id={user.id}
                     key={user.id}
                     name={user.name}
