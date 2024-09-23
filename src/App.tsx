@@ -7,11 +7,11 @@ import PublicPage from "./pages/PublicPage";
 import ProtectedPage from "./pages/ProtectedPage";
 import LoginPage from "./pages/LoginPage";
 import { RequireAdminAuth, RequireAuth } from "./auth/RequireAuth";
-import Layout from "./layout";
 import { AuthProvider } from "./context/AuthContext";
 import { connect } from 'react-redux';
 import { useEffect } from "react";
 import { fetchUsers } from "./redux/actions/userActions";
+import Layout from "./layout/Layout";
 
 const App = ({ dispatch }) => {
 
