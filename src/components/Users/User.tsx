@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { connect } from "react-redux";
-import { useAuth } from "../../App";
+import { useAuth } from "../../hooks/useAuth";
 
 export const User = ({ name, email, id, onEdit, onDelete }) => {
     const [isEdit, setIsEdit] = useState(false);

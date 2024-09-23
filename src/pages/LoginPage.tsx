@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../App";
 import { useEffect } from "react";
 import CustomForm from "../components/CustomForm";
 import styled from '@emotion/styled';
+import { useAuth } from "../hooks/useAuth";
 
 export default function LoginPage() {
     const navigate = useNavigate();

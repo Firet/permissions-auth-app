@@ -1,16 +1,14 @@
-import * as React from "react";
 import {
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-import { fakeAuthProvider } from "./auth/fakeAuthProvider";
 import PublicPage from "./pages/PublicPage";
 import ProtectedPage from "./pages/ProtectedPage";
 import LoginPage from "./pages/LoginPage";
-import { AuthContextType } from "./types/AuthContextType";
 import { RequireAdminAuth, RequireAuth } from "./auth/RequireAuth";
 import Layout from "./layout";
+import { AuthProvider } from "./context/AuthContext";
 
 export default function App() {
   return (
@@ -55,53 +53,4 @@ export default function App() {
       </Routes>
     </AuthProvider>
   );
-}
-
-const AuthContext = React.createContext<AuthContextType>(null!);
-
-function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = React.useState<any>(null);
-  const [authState, setAuthState] = React.useState({
-    isAuthenticated: false,
-    isAdmin: false,
-  });
-
-  const signin = (newUser: string, callback: VoidFunction) => {
-    setUser(newUser);
-    if (newUser === 'admin') {
-      return fakeAuthProvider.signinAdmin(() => {
-        setAuthState({
-          isAuthenticated: fakeAuthProvider.isAuthenticated,
-          isAdmin: fakeAuthProvider.isAdmin,
-        });
-        callback();
-      });
-    }
-    return fakeAuthProvider.signin(() => {
-      setAuthState({
-        isAuthenticated: fakeAuthProvider.isAuthenticated,
-        isAdmin: fakeAuthProvider.isAdmin,
-      });
-      callback();
-    });
-  };
-
-  const signout = (callback: VoidFunction) => {
-    return fakeAuthProvider.signout(() => {
-      setUser(null);
-      setAuthState({
-        isAuthenticated: fakeAuthProvider.isAuthenticated,
-        isAdmin: fakeAuthProvider.isAdmin,
-      });
-      callback();
-    });
-  };
-
-  const value = { authState, user, signin, signout };
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
-
-export function useAuth() {
-  return React.useContext(AuthContext);
 }

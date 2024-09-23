@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../App";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function Logout() {
     const auth = useAuth();

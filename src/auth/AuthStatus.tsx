@@ -1,5 +1,5 @@
-import { useAuth } from "../App";
 import Logout from "../components/Logout/Logout";
+import { useAuth } from "../hooks/useAuth";
 
 export function AuthStatus() {
     const auth = useAuth();

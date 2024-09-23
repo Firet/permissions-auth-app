@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
-import { useAuth } from "../App";
 import Dashboard from "../components/Dashboard/Dashbaord";
+import { useAuth } from "../hooks/useAuth";
 
 export default function PublicPage() {
   const auth = useAuth();

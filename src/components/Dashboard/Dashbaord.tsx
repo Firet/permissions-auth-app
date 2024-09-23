@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { connect } from 'react-redux';
 import { addUser, deleteUserWithId, editUser, fetchUsers } from "../../redux/actions/userActions";
 import { AddUser } from "../Users/AddUser";
-import { useAuth } from '../../App';
 import User from "../Users/User";
+import { useAuth } from "../../hooks/useAuth";
 
 const Dashbaord = ({ dispatch, loading, users, hasErrors }) => {
     useEffect(() => {
