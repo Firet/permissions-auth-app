@@ -2,7 +2,6 @@ import * as React from "react";
 import {
   Routes,
   Route,
-  useNavigate,
   Navigate,
 } from "react-router-dom";
 import { fakeAuthProvider } from "./auth/fakeAuthProvider";
@@ -11,47 +10,47 @@ import ProtectedPage from "./pages/ProtectedPage";
 import LoginPage from "./pages/LoginPage";
 import { AuthContextType } from "./types/AuthContextType";
 import { RequireAdminAuth, RequireAuth } from "./auth/RequireAuth";
-// import Layout from "./layout";
+import Layout from "./layout";
 
 export default function App() {
   return (
     <AuthProvider>
       <Routes>
-        {/* <Route element={<Layout />}> */}
-        <Route path="/" element={<PublicPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route
-          path="/public"
-          element={
-            <PublicPage />
-          }
-        />
-        <Route
-          path="/3"
-          element={
-            <>
-              <div>3</div>
+        <Route element={<Layout />}>
+          <Route path="/" element={<PublicPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/public"
+            element={
               <PublicPage />
-            </>
-          }
-        />
-        <Route
-          path="/protected"
-          element={
-            <RequireAuth>
-              <ProtectedPage />
-            </RequireAuth>
-          }
-        />
-        <Route
-          path="/admin"
-          element={
-            <RequireAdminAuth>
-              <div>tenés acceso</div>
-            </RequireAdminAuth>
-          }
-        />
-        {/* </Route> */}
+            }
+          />
+          <Route
+            path="/3"
+            element={
+              <>
+                <div>3</div>
+                <PublicPage />
+              </>
+            }
+          />
+          <Route
+            path="/protected"
+            element={
+              <RequireAuth>
+                <ProtectedPage />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <RequireAdminAuth>
+                <div>tenés acceso</div>
+              </RequireAdminAuth>
+            }
+          />
+        </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </AuthProvider>
@@ -105,26 +104,4 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
 
 export function useAuth() {
   return React.useContext(AuthContext);
-}
-
-export function AuthStatus() {
-  const auth = useAuth();
-  const navigate = useNavigate();
-
-  if (!auth.user) {
-    return <p>You are not logged in.</p>;
-  }
-
-  return (
-    <p>
-      Welcome {auth.user}!{" "}
-      <button
-        onClick={() => {
-          auth.signout(() => navigate("/"));
-        }}
-      >
-        Sign out
-      </button>
-    </p>
-  );
 }

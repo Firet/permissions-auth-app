@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import { AuthStatus, useAuth } from "../App";
+import { useAuth } from "../App";
 import Dashboard from "../components/Dashboard/Dashbaord";
 
 export default function PublicPage() {
@@ -8,7 +8,6 @@ export default function PublicPage() {
   return (
     <>
       <h3>Public</h3>
-      <AuthStatus />
       <div>
         {auth.user && <h3>auth user is: {auth.user}</h3>}
 

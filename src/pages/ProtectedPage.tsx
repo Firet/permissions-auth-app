@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import { AuthStatus, useAuth } from "../App";
+import { useAuth } from "../App";
 import Dashboard from "../components/Dashboard/Dashbaord";
 
 export default function ProtectedPage() {
@@ -7,7 +7,6 @@ export default function ProtectedPage() {
   return (
     <>
       <h3>Protected</h3>
-      <AuthStatus />
       <div>
         {auth.user && <h3>auth user is: {auth.user}</h3>}
         {auth.user === 'admin' && <h3>esto es re de admin porque auth user is: {auth.user}</h3>}
