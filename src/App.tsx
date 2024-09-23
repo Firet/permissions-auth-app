@@ -9,8 +9,17 @@ import LoginPage from "./pages/LoginPage";
 import { RequireAdminAuth, RequireAuth } from "./auth/RequireAuth";
 import Layout from "./layout";
 import { AuthProvider } from "./context/AuthContext";
+import { connect } from 'react-redux';
+import { useEffect } from "react";
+import { fetchUsers } from "./redux/actions/userActions";
 
-export default function App() {
+const App = ({ dispatch }) => {
+
+  useEffect(() => {
+
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
   return (
     <AuthProvider>
       <Routes>
@@ -54,3 +63,11 @@ export default function App() {
     </AuthProvider>
   );
 }
+
+const mapStateToProps = (state) => ({
+  loading: state.users.loading,
+  users: state.users.users,
+  hasErrors: state.users.hasErrors
+});
+
+export default connect(mapStateToProps)(App);

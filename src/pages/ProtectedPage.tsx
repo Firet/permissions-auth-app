@@ -23,6 +23,10 @@ export default function ProtectedPage() {
           <li>
             <Link to="/admin"> ir a admin </Link>
           </li>
+          <li>
+            <Link to="/users"> ir a users </Link>
+          </li>
+
         </ul>
 
         <Dashboard />

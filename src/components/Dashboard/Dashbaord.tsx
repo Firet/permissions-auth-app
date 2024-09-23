@@ -1,17 +1,14 @@
-import { useEffect } from "react";
 import { connect } from 'react-redux';
-import { addUser, deleteUserWithId, editUser, fetchUsers } from "../../redux/actions/userActions";
+import { addUser, deleteUserWithId, editUser } from "../../redux/actions/userActions";
 import { AddUser } from "../Users/AddUser";
 import User from "../Users/User";
 import { useAuth } from "../../hooks/useAuth";
 
-const Dashbaord = ({ dispatch, loading, users, hasErrors }) => {
-    useEffect(() => {
-        dispatch(fetchUsers());
-    }, [dispatch]);
+    function Dashbaord({ dispatch, loading, users, hasErrors }) {
 
     const auth = useAuth();
     const isAdmin = auth.authState.isAdmin;
+    
     const onAdd = (name, email) => {
         dispatch(addUser({ name, email }));
     };
@@ -43,11 +40,12 @@ const Dashbaord = ({ dispatch, loading, users, hasErrors }) => {
 
     return (
         <div className="App">
-            <h1>Users</h1>
+            <h1>Dashboard</h1>
             {isAdmin && <AddUser onAdd={onAdd} />}
             {renderUsers()}
         </div>
     );
+
 };
 
 const mapStateToProps = (state) => ({
