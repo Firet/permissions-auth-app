@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import CustomForm from "../components/CustomForm";
+import CustomForm from "../components/CustomForm/CustomForm";
 import styled from '@emotion/styled';
 import { useAuth } from "../hooks/useAuth";
 

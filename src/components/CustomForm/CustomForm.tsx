@@ -1,8 +1,8 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
 import { TextField, Button } from '@mui/material';
-import { LoginInput } from '../types/LoginInputType';
-import { useAuth } from '../hooks/useAuth';
+import { LoginInput } from '../../types/LoginInputType';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function CustomForm() {
   const navigate = useNavigate();
