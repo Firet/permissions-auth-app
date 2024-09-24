@@ -8,7 +8,6 @@ export default function Logout() {
 
 	return (
 		<>
-			{auth.user}{' '}
 			<CustomButton
 				type=''
 				color='primary'
