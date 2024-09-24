@@ -13,8 +13,9 @@ export default function fetchData(data: any) {
 	// 		'Content-type': 'application/json; charset=UTF-8',
 	// 	},
 	// };
-	return axios.get(url, data)
-        .then((response) => console.log(response))
-		.then(() => console.info("Hook sent correctly"))
-		.catch(() => console.warn("Hook failed"))
+	return axios
+		.get(url, data)
+		.then((response) => console.log(response))
+		.then(() => console.info('Hook sent correctly'))
+		.catch(() => console.warn('Hook failed'));
 }

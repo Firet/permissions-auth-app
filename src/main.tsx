@@ -11,20 +11,19 @@ import theme from './theme';
 import './index.css';
 import App from './App';
 
-
 const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
+	rootReducer,
+	composeWithDevTools(applyMiddleware(thunk))
 );
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </ThemeProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+	<React.StrictMode>
+		<BrowserRouter>
+			<ThemeProvider theme={theme}>
+				<Provider store={store}>
+					<App />
+				</Provider>
+			</ThemeProvider>
+		</BrowserRouter>
+	</React.StrictMode>
 );

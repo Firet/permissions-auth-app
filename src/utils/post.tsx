@@ -13,7 +13,8 @@ export default function post(data: any) {
 	// 		'Content-type': 'application/json; charset=UTF-8',
 	// 	},
 	// };
-	return axios.post(url, data)
-		.then(() => console.info("Hook sent correctly"))
-		.catch(() => console.warn("Hook failed"))
+	return axios
+		.post(url, data)
+		.then(() => console.info('Hook sent correctly'))
+		.catch(() => console.warn('Hook failed'));
 }

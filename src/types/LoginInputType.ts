@@ -1,5 +1,5 @@
 export interface LoginInput {
-    userName: string
-    password: string
-    multipleErrorInput: string
+	userName: string;
+	password: string;
+	multipleErrorInput: string;
 }
