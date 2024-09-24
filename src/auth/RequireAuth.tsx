@@ -20,7 +20,7 @@ export function RequireAdminAuth({ children }: { children: JSX.Element }) {
 	const auth = useAuth();
 
 	if (!auth.authState.isAdmin) {
-		return <div> No tenés acceso </div>;
+		return <div>You do not have access</div>;
 	}
 	return children;
 }

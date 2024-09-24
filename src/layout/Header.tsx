@@ -18,9 +18,9 @@ export default function Header() {
 	return (
 		<HeaderContainer>
 			<div>
-				<StyledLink to="/public">Public Page </StyledLink>
-				<StyledLink to="/protected">Protected Page</StyledLink>
-				<StyledLink to="/admin"> Admin Page</StyledLink>
+				<StyledLink to="/public">Home</StyledLink>
+				<StyledLink to="/protected">Dashboard Center</StyledLink>
+				<StyledLink to="/admin">Admin Page</StyledLink>
 			</div>
 			<AuthStatus />
 		</HeaderContainer>

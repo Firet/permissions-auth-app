@@ -33,7 +33,7 @@ const App = ({ dispatch }) => {
 						path="/admin"
 						element={
 							<RequireAdminAuth>
-								<div>tenés acceso</div>
+								<div>You have access</div>
 							</RequireAdminAuth>
 						}
 					/>

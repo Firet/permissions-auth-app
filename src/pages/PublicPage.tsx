@@ -13,7 +13,7 @@ export default function PublicPage() {
 
 	return (
 		<>
-			<h3>Public</h3>
+			<h3>Home</h3>
 			<DashboardContainer>
 				<Dashboard />
 				<Outlet />
