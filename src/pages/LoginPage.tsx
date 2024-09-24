@@ -8,14 +8,28 @@ export default function LoginPage() {
 	const navigate = useNavigate();
 	const auth = useAuth();
 
-	const FormContainer = styled.div`
+	const LoginContainer = styled.div`
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 200px;
+		width: 100%;
+		height: 100vh;
+	`;
+
+	const LoginCard = styled.div`
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 100%;
-		height: 100vh;
-	`;
+		background-color: #bdbfc0;
+		color: white;
+		min-height: 400px;
+		width: 20%;
+		border-radius: 30px;
+		box-shadow: 10px 10px lightblue;
+		padding: 5px;
+`;
 
 	useEffect(() => {
 		if (auth.user) {
@@ -24,9 +38,11 @@ export default function LoginPage() {
 	}, [auth.user, navigate]);
 
 	return (
-		<FormContainer>
-			<h3>Login Page</h3>
-			<CustomForm />
-		</FormContainer>
+		<LoginContainer>
+			<LoginCard>
+				<h3>Login Page</h3>
+				<CustomForm />
+			</LoginCard>
+		</LoginContainer>
 	);
 }
