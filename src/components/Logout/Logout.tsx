@@ -10,6 +10,8 @@ export default function Logout() {
 		<>
 			{auth.user}{' '}
 			<CustomButton
+				type=''
+				color='primary'
 				label="Sign Out"
 				onClick={() => {
 					auth.signout(() => navigate('/'));

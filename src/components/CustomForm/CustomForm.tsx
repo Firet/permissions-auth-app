@@ -1,8 +1,9 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { TextField, Button } from '@mui/material';
+import { TextField } from '@mui/material';
 import { LoginInput } from '../../types/LoginInputType';
 import { useAuth } from '../../hooks/useAuth';
+import { CustomButton } from '../CustomButton/CustomButton';
 
 export default function CustomForm() {
 	const navigate = useNavigate();
@@ -55,9 +56,8 @@ export default function CustomForm() {
 				error={!!errors.password}
 				helperText={errors.password?.message}
 			/>
-			<Button type="submit" variant="contained" color="primary">
-				Log In
-			</Button>
+			<CustomButton type="submit" color="primary" label="Log In" onClick={()=>null}>
+			</CustomButton>
 		</form>
 	);
 }

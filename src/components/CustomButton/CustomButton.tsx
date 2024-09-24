@@ -1,40 +1,18 @@
 import styled from '@emotion/styled';
+import { Button } from '@mui/material';
 
-interface ButtonProps {
-	label: string;
-	variant?: 'primary' | 'secondary';
-	onClick: () => void;
-}
-
-const StyledButton = styled.button<{ variant?: ButtonProps['variant'] }>`
-	background-color: ${(props) => {
-		switch (props.variant) {
-			case 'primary':
-				return 'blue';
-			case 'secondary':
-				return 'red';
-			default:
-				return 'green';
-		}
-	}};
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
+const StyledButton = styled(Button)`
+	margin: 10px;
 `;
 
 export const CustomButton = ({
+	type,
 	label,
 	onClick,
-	variant = 'primary',
-}: ButtonProps) => {
+	color
+}) => {
 	return (
-		<StyledButton variant={variant} onClick={onClick}>
+		<StyledButton color={color} type={type} onClick={onClick}>
 			{label}
 		</StyledButton>
 	);

@@ -1,22 +1,14 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import { useAuth } from '../../hooks/useAuth';
-import { Button, Card, TextField } from '@mui/material';
+import { Card, TextField } from '@mui/material';
 import styled from '@emotion/styled';
+import { CustomButton } from '../CustomButton/CustomButton';
 
 const StyledForm = styled.form`
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-`;
-
-const StyledButton = styled(Button)`
-	background-color: #black;
-	color: white;
-	margin: 10px;
-	&:hover {
-		background-color: orange;
-	}
 `;
 
 const StyledCard = styled(Card)`
@@ -67,7 +59,13 @@ export const UserCard = ({ name, email, id, onEdit, onDelete }) => {
 						defaultValue={email}
 						fullWidth
 					/>
-					<StyledButton type="submit">Save</StyledButton>
+					<CustomButton 
+						type="submit"
+						color="error"
+						label="Save"
+						onClick={() => null}
+						>
+					</CustomButton>
 				</StyledForm>
 			) : (
 				<StyledCard className="user">
@@ -75,20 +73,20 @@ export const UserCard = ({ name, email, id, onEdit, onDelete }) => {
 					<div className="user-email">{email}</div>
 					{isAdmin && (
 						<div>
-							<StyledButton
-								variant="contained"
-								color="primary"
+							<CustomButton
+								type=""
+								color="warning"
+								label="Edit"
 								onClick={handleEdit}
 							>
-								Edit
-							</StyledButton>
-							<StyledButton
-								variant="contained"
-								color="secondary"
+							</CustomButton>
+							<CustomButton
+								type=""
+								color="error"
+								label="Delete"
 								onClick={handleDelete}
 							>
-								Delete
-							</StyledButton>
+							</CustomButton>
 						</div>
 					)}
 				</StyledCard>

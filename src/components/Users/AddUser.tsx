@@ -1,3 +1,5 @@
+import { CustomButton } from "../CustomButton/CustomButton";
+
 export const AddUser = ({ onAdd }) => {
 	const handleOnSubmit = (evt: any) => {
 		evt.preventDefault();
@@ -11,7 +13,7 @@ export const AddUser = ({ onAdd }) => {
 			<h3>Add User</h3>
 			<input placeholder="Name" name="name" />
 			<input placeholder="Email" name="email" />
-			<button onSubmit={handleOnSubmit}>Add</button>
+			<CustomButton type="" color="primary" label="Add" onClick={handleOnSubmit}></CustomButton>
 			<hr />
 		</form>
 	);
