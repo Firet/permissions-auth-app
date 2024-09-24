@@ -17,7 +17,12 @@ const NoAccessCard = styled.div`
 export function NoAccess() {
     return (<NoAccessContainer>
         <NoAccessCard>
-            You do not have access
+			<p>
+            You do not have access.
+			</p>
+			<p>
+			Please login as administrator to be able to enter.
+			</p>
         </NoAccessCard>
     </NoAccessContainer>);
 }
