@@ -10,10 +10,10 @@ const DashboardContainer = styled.div`
 	width: 100%;
 `;
 
-export default function ProtectedPage() {
+export default function ProtectedPage({ title }) {
 	return (
 		<>
-			<h3>Dashboard Center</h3>
+			<h3>{title}</h3>
 			<DashboardContainer>
 				<Dashboard />
 				<Outlet />

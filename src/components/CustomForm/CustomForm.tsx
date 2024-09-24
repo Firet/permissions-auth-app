@@ -14,8 +14,8 @@ export default function CustomForm() {
 	`;
 
 	const StyledTextField = styled(TextField)`
-	margin-top: 10px;
-`;
+		margin-top: 10px;
+	`;
 
 
 	const navigate = useNavigate();
@@ -29,7 +29,7 @@ export default function CustomForm() {
 	const onSubmit: SubmitHandler<LoginInput> = (data) => {
 		if (data.userName) {
 			auth.signin(data.userName, () => {
-				navigate('/public', { replace: true });
+				navigate('/protected', { replace: true });
 			});
 		}
 	};
