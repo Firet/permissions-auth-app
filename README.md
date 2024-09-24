@@ -1,50 +1,31 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔵 Aplicación Web con Login Y Roles. 
 
-Currently, two official plugins are available:
+Esta es una App con un sistema de autenticación con roles.
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Hay dos tipos de usuarios diferentes, el usuario con el rol "admin" puede realizar operaciones de creación, edición y eliminación, mientras que el usuario común solo tiene acceso a la lectura de datos. 
+- Se usó Context API para determinar los roles del usuario.
+- Se utilizó react-router para mostrar u ocultar rutas a determinados usuarios.
+- Se accede a info obtenida desde esta [API](https://jsonplaceholder.typicode.com/).
+- La info obtenida en la API se guarda en el estado global usando Redux.
+- Se usó flexbox para se vea bien en diferentes tipos de patanllas: monitores grandes🖥️, celulares📱 y laptops💻. 
+- Los elementos visuales se probaron en varios navegadores.
+- Se instaló prettier para hacer que el código sea consistente a través de toda la aplicación.
 
-## Expanding the ESLint configuration
+## Estructura de Carpetas
+- /auth: acá guardé todos los componentes relacionados con la autenticación
+- /types: acá van los tipos y las interfaces
+- /pages: las diferentes vistas de la app
+- /hooks: en esta carpeta está el hook useAuth
+- redux: carpeta de dicada a componentes de redux: action y reducers
+- /components: acá están todos los componentes reusables, generalmente los organizo según los principios de Atomic Design pero esta vez no tuve tiempo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🏃‍♂️¿Cómo correr esta app?
 
--   Configure the top-level `parserOptions` property like this:
+🚀 Primero, levantá el servidor de desarrollo:
 
-```js
-export default tseslint.config({
-	languageOptions: {
-		// other options...
-		parserOptions: {
-			project: ['./tsconfig.node.json', './tsconfig.app.json'],
-			tsconfigRootDir: import.meta.dirname,
-		},
-	},
-});
+```bash
+npm run dev
 ```
 
--   Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
--   Optionally add `...tseslint.configs.stylisticTypeChecked`
--   Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
-
-export default tseslint.config({
-	// Set the react version
-	settings: { react: { version: '18.3' } },
-	plugins: {
-		// Add the react plugin
-		react,
-	},
-	rules: {
-		// other rules...
-		// Enable its recommended rules
-		...react.configs.recommended.rules,
-		...react.configs['jsx-runtime'].rules,
-	},
-});
-```
+💻 Después, podés abrir [localhost:5173](http://localhost:5173) con tu navegador para ver el resultado.
