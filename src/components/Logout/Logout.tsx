@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import { CustomButton } from "../CustomButton/CustomButton";
 
 export default function Logout() {
     const auth = useAuth();
@@ -8,13 +9,13 @@ export default function Logout() {
     return (
         <>
              {auth.user}{" "}
-            <button
+            <CustomButton
+                label="Sign Out"
                 onClick={() => {
                     auth.signout(() => navigate("/"));
                 }}
             >
-                Sign out
-            </button>
+            </CustomButton>
         </>
     );
 }
