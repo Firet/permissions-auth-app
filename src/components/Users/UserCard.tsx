@@ -17,12 +17,12 @@ const StyledCard = styled(Card)`
 	font-weight: 600;
 	align-content: center;
 	text-align: center;
-	width: 30%;
+	width: 20%;
 	height: 100px;
 	margin: 10px;
 	&:hover {
 		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-		background-color: #e8e874;
+		background-color: #bdbfc0;
 		color: white;
 	}
 `;
