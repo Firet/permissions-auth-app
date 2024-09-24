@@ -32,7 +32,7 @@ function Dashbaord({ dispatch, loading, users, hasErrors }) {
 		justify-content: center;
 		background-color: #FBFBFE;
 		width: 100%;
-		min-height: 800px;
+		height: 100vh;
 	`;
 	const AddUserContainer = styled.div`
 		display: flex;
