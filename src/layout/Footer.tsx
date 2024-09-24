@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const StyledFooter = styled.footer`
-	background-color: #6b6b36;
+	background-color: #bdbfc0;
 	color: white;
 	width: 100%;
 	margin-top: 20px;

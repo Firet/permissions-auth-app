@@ -2,7 +2,13 @@ import styled from '@emotion/styled';
 import { Button } from '@mui/material';
 
 const StyledButton = styled(Button)`
+	background-color: white;
+	color: grey;
 	margin: 10px;
+	&:hover {
+		background-color: #ffff80;
+		color: black;
+	}
 `;
 
 export const CustomButton = ({

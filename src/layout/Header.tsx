@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import { StyledLink } from '../components/StyledLink/SyledLink';
 
 const HeaderContainer = styled.header`
-	background-color: #e8e874;
-	color: black;
+	background-color: #bdbfc0;
+	color: white;
 	font-weight: 700;
 	display: flex;
 	flex-direction: row;
