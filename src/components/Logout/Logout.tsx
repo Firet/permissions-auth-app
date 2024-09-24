@@ -6,8 +6,8 @@ export default function Logout() {
     const navigate = useNavigate();
 
     return (
-        <p>
-            Welcome {auth.user}!{" "}
+        <>
+             {auth.user}{" "}
             <button
                 onClick={() => {
                     auth.signout(() => navigate("/"));
@@ -15,6 +15,6 @@ export default function Logout() {
             >
                 Sign out
             </button>
-        </p>
+        </>
     );
 }

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { AuthStatus } from "../auth/AuthStatus";
 import styled from "@emotion/styled";
+import { StyledLink } from "../components/StyledLink/SyledLink";
 
 const HeaderContainer = styled.header`
   background-color: red;
@@ -15,9 +15,9 @@ const HeaderContainer = styled.header`
 export default function Header() {
     return (
         <HeaderContainer>
-            <Link to="/public">Public Page </Link>
-            <Link to="/protected">Protected Page</Link>
-            <Link to="/admin"> Admin</Link>
+            <StyledLink to="/public">Public Page </StyledLink>
+            <StyledLink to="/protected">Protected Page</StyledLink>
+            <StyledLink to="/admin"> Admin Page</StyledLink>
             <AuthStatus />
         </HeaderContainer>
     );
