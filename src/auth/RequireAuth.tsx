@@ -1,5 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { NoAccess } from '../pages/NoAccess/NoAccess';
 
 export function RequireAuth({ children }: { children: JSX.Element }) {
 	const auth = useAuth();
@@ -20,7 +21,7 @@ export function RequireAdminAuth({ children }: { children: JSX.Element }) {
 	const auth = useAuth();
 
 	if (!auth.authState.isAdmin) {
-		return <div>You do not have access</div>;
+		return <NoAccess />;
 	}
 	return children;
 }
