@@ -6,7 +6,7 @@ const DashboardContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	background-color: papayawhip;
+	background-color: #ffff80;
 	width: 100%;
 `;
 

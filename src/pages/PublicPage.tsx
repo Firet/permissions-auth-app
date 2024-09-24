@@ -7,7 +7,7 @@ export default function PublicPage() {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		background-color: orange;
+		background-color: #ffff80;
 		width: 100%;
 	`;
 
