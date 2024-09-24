@@ -4,19 +4,6 @@ import { useAuth } from "../../hooks/useAuth";
 import { Button, Card, TextField } from '@mui/material';
 import styled from '@emotion/styled';
 
-
-
-
-const CardsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  background-color: papayawhip;
-  width: 100%;
-  &:hover {
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-`;
-
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -24,24 +11,25 @@ const StyledForm = styled.form`
 `;
 
 const StyledButton = styled(Button)`
-  background-color: #3f51b5;
+  background-color: #black;
   color: white;
   margin: 10px;
   &:hover {
-    background-color: #303f9f;
+    background-color: orange;
   }
 `;
 
 const StyledCard = styled(Card)`
-  background-color: #360845;
+  background-color: blue;
   color: white;
+  align-content: center;
   text-align: center;
-  width: 100%;
+  width: 30%;
   height: 100px;
   margin: 10px;
-
   &:hover {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: red;
   }
 `;
 
@@ -64,7 +52,7 @@ export const UserCard = ({ name, email, id, onEdit, onDelete }) => {
     };
 
     return (
-        <CardsContainer>
+        <>
             {isEdit ? (
                 <StyledForm onSubmit={handleOnEditSubmit}>
                     <TextField
@@ -97,7 +85,7 @@ export const UserCard = ({ name, email, id, onEdit, onDelete }) => {
                     )}
                 </StyledCard>
             )}
-        </CardsContainer>
+        </>
     );
 };
 

@@ -1,38 +1,23 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Dashboard from "../components/Dashboard/Dashbaord";
-import { useAuth } from "../hooks/useAuth";
+import styled from "@emotion/styled";
+
+const DashboardContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: papayawhip;
+    width: 100%;
+  `;
 
 export default function ProtectedPage() {
-  const auth = useAuth();
   return (
     <>
       <h3>Protected</h3>
-      <div>
-        {auth.user && <h3>auth user is: {auth.user}</h3>}
-        {auth.user === 'admin' && <h3>esto es re de admin porque auth user is: {auth.user}</h3>}
-        <ul>
-          <li>
-            <Link to="/login">Log in </Link>
-          </li>
-          <li>
-            <Link to="/public">Public Page (common user) </Link>
-          </li>
-          <li>
-            <Link to="/3"> ir a 3 </Link>
-          </li>
-          <li>
-            <Link to="/admin"> ir a admin </Link>
-          </li>
-          <li>
-            <Link to="/users"> ir a users </Link>
-          </li>
-
-        </ul>
-
+      <DashboardContainer>
         <Dashboard />
-
         <Outlet />
-      </div>
+      </DashboardContainer>
     </>
   )
 }

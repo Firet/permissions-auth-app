@@ -33,15 +33,6 @@ const App = ({ dispatch }) => {
             }
           />
           <Route
-            path="/3"
-            element={
-              <>
-                <div>3</div>
-                <PublicPage />
-              </>
-            }
-          />
-          <Route
             path="/protected"
             element={
               <RequireAuth>

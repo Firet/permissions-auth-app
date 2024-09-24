@@ -3,12 +3,13 @@ import { addUser, deleteUserWithId, editUser } from "../../redux/actions/userAct
 import { AddUser } from "../Users/AddUser";
 import UserCard from "../Users/UserCard";
 import { useAuth } from "../../hooks/useAuth";
+import styled from '@emotion/styled';
 
-    function Dashbaord({ dispatch, loading, users, hasErrors }) {
+function Dashbaord({ dispatch, loading, users, hasErrors }) {
 
     const auth = useAuth();
     const isAdmin = auth.authState.isAdmin;
-    
+
     const onAdd = (name, email) => {
         dispatch(addUser({ name, email }));
     };
@@ -20,6 +21,22 @@ import { useAuth } from "../../hooks/useAuth";
     const onDelete = (id) => {
         dispatch(deleteUserWithId(id));
     };
+
+    const RenderCardsContainer = styled.div`
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: violet;
+        width: 80%;
+        min-height: 800px;
+    `;
+    const AddUserContainer = styled.div`
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            background-color: grey;
+    `;
 
     const renderUsers = () => {
         if (loading) return <p>Loading users...</p>;
@@ -39,11 +56,15 @@ import { useAuth } from "../../hooks/useAuth";
     };
 
     return (
-        <div className="App">
-            <h1>Dashboard</h1>
-            {isAdmin && <AddUser onAdd={onAdd} />}
+        <RenderCardsContainer>
+            {
+                isAdmin &&
+                <AddUserContainer>
+                    <AddUser onAdd={onAdd} />
+                </AddUserContainer>
+            }
             {renderUsers()}
-        </div>
+        </RenderCardsContainer>
     );
 
 };

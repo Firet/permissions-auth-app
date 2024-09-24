@@ -1,31 +1,24 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Dashboard from "../components/Dashboard/Dashbaord";
-import { useAuth } from "../hooks/useAuth";
+import styled from "@emotion/styled";
 
 export default function PublicPage() {
-  const auth = useAuth();
+
+  const DashboardContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: orange;
+    width: 100%;
+  `;
 
   return (
     <>
       <h3>Public</h3>
-      <div>
-        {auth.user && <h3>auth user is: {auth.user}</h3>}
-
-        <ul>
-          <li>
-            <Link to="/login">Login </Link>
-          </li>
-          <li>
-            <Link to="/protected">Protected Page (admin) </Link>
-          </li>
-          <li>
-            <Link to="/admin"> ir a admin </Link>
-          </li>
-        </ul>
+      <DashboardContainer>
         <Dashboard />
-
         <Outlet />
-      </div>
+      </DashboardContainer>
     </>
   )
 
