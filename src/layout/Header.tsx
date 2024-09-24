@@ -9,16 +9,19 @@ const HeaderContainer = styled.header`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	justify-content: center;
+	height: 100px;
+	justify-content: space-around;
 	align-items: center;
 `;
 
 export default function Header() {
 	return (
 		<HeaderContainer>
-			<StyledLink to="/public">Public Page </StyledLink>
-			<StyledLink to="/protected">Protected Page</StyledLink>
-			<StyledLink to="/admin"> Admin Page</StyledLink>
+			<div>
+				<StyledLink to="/public">Public Page </StyledLink>
+				<StyledLink to="/protected">Protected Page</StyledLink>
+				<StyledLink to="/admin"> Admin Page</StyledLink>
+			</div>
 			<AuthStatus />
 		</HeaderContainer>
 	);
