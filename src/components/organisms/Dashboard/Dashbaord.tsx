@@ -3,10 +3,10 @@ import {
 	addUser,
 	deleteUserWithId,
 	editUser,
-} from '../../redux/actions/userActions';
+} from '../../../redux/actions/userActions';
 import { AddUser } from '../Users/AddUser';
 import UserCard from '../Users/UserCard';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../../hooks/useAuth';
 import styled from '@emotion/styled';
 
 function Dashbaord({ dispatch, loading, users, hasErrors }) {

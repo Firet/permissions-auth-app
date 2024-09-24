@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../../hooks/useAuth';
 import { Card, TextField } from '@mui/material';
 import styled from '@emotion/styled';
-import { CustomButton } from '../CustomButton/CustomButton';
+import { CustomButton } from '../../molecules/CustomButton/CustomButton';
 
 const StyledForm = styled.form`
 	display: flex;

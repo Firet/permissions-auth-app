@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
-import { NoAccess } from '../pages/NoAccess/NoAccess';
+import { NoAccess } from '../components/pages/NoAccess';
 
 export function RequireAuth({ children }: { children: JSX.Element }) {
 	const auth = useAuth();

@@ -1,6 +1,6 @@
-import Logout from '../components/Logout/Logout';
+import Logout from '../components/molecules/Logout/Logout';
 import { useAuth } from '../hooks/useAuth';
-import { StyledLink } from '../components/StyledLink/SyledLink';
+import { StyledLink } from '../components/atoms/StyledLink/SyledLink';
 
 export function AuthStatus() {
 	const auth = useAuth();

@@ -1,6 +1,6 @@
-import { AuthStatus } from '../auth/AuthStatus';
+import { AuthStatus } from '../../auth/AuthStatus';
 import styled from '@emotion/styled';
-import { StyledLink } from '../components/StyledLink/SyledLink';
+import { StyledLink } from '../atoms/StyledLink/SyledLink';
 
 const HeaderContainer = styled.header`
 	background-color: #bdbfc0;

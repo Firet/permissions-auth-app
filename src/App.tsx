@@ -1,13 +1,13 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import PublicPage from './pages/PublicPage';
-import ProtectedPage from './pages/ProtectedPage';
-import LoginPage from './pages/LoginPage';
+import PublicPage from './components/pages/PublicPage';
+import ProtectedPage from './components/pages/ProtectedPage';
+import LoginPage from './components/pages/LoginPage';
 import { RequireAdminAuth, RequireAuth } from './auth/RequireAuth';
 import { AuthProvider } from './context/AuthContext';
 import { connect } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchUsers } from './redux/actions/userActions';
-import Layout from './layout/Layout';
+import Layout from './components/templates/Layout';
 
 const App = ({ dispatch }) => {
 	useEffect(() => {

@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import Dashboard from '../components/Dashboard/Dashbaord';
+import Dashboard from '../organisms/Dashboard/Dashbaord';
 import styled from '@emotion/styled';
 
 const DashboardContainer = styled.div`

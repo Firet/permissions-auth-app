@@ -2,8 +2,8 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { TextField } from '@mui/material';
 import styled from '@emotion/styled';
-import { LoginInput } from '../../types/LoginInputType';
-import { useAuth } from '../../hooks/useAuth';
+import { LoginInput } from '../../../types/LoginInputType';
+import { useAuth } from '../../../hooks/useAuth';
 import { CustomButton } from '../CustomButton/CustomButton';
 
 export default function CustomForm() {
