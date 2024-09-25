@@ -31,11 +31,11 @@ export default function PublicPage() {
 			<HomeContainer>
 				<HomeTitle>This is an authentication Demo</HomeTitle>
 				<HomeText>
-					Log In with any username to enter as a{' '}
+					Log in with any username to enter as a{' '}
 					<SpanText>User Role</SpanText>
 				</HomeText>
 				<HomeText>
-					Otherwise, you can login with the username 'admin' and
+					Otherwise, you can log in with the username 'admin' and
 					password 'admin' to enter as an{' '}
 					<SpanText>Administrator role</SpanText>
 				</HomeText>
