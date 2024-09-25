@@ -9,20 +9,48 @@ const HeaderContainer = styled.header`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	height: 100px;
 	justify-content: space-around;
+	align-items: center;
+`;
+
+
+const LinksContainer = styled.header`
+	background-color: var(--secondary);
+	color: var(--white);
+	font-size: 20px;
+	font-weight: 700;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin-left: 20%;
+`;
+
+const AuthStatusContainer = styled.header`
+	background-color: var(--primary);
+	color: var(--black);
+	font-weight: 600;
+	font-size: 10px;
+	display: flex;
+	flex-direction: column;
+	border:1px solid black;
+	border-radius: 10px;
+	width: 20%;
 	align-items: center;
 `;
 
 export default function Header() {
 	return (
 		<HeaderContainer>
-			<div>
+			<LinksContainer>
 				<StyledLink to="/public">Home</StyledLink>
 				<StyledLink to="/protected">Dashboard Center</StyledLink>
 				<StyledLink to="/admin">Admin Page</StyledLink>
-			</div>
-			<AuthStatus />
-		</HeaderContainer>
+			</LinksContainer>
+			<AuthStatusContainer>
+				<AuthStatus />
+			</AuthStatusContainer>
+		</ HeaderContainer>
 	);
 }

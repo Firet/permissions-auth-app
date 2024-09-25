@@ -15,7 +15,7 @@ export function AuthStatus() {
 	}
 	return (<>
 		<p>
-			Username: {auth.user}{' '}
+			User: {auth.user}{' '}
 		</p>
 		<p>
 			Role: {isAdmin ? 'Admintrator' : 'User'}
