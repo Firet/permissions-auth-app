@@ -25,7 +25,7 @@ const App = ({ dispatch }) => {
 						path="/protected"
 						element={
 							<RequireAuth>
-								<ProtectedPage title="Dashboard Center" />
+								<ProtectedPage />
 							</RequireAuth>
 						}
 					/>
@@ -33,7 +33,7 @@ const App = ({ dispatch }) => {
 						path="/admin"
 						element={
 							<RequireAdminAuth>
-								<ProtectedPage title="Admin Page"/>
+								<ProtectedPage />
 							</RequireAdminAuth>
 						}
 					/>
