@@ -28,11 +28,15 @@ const LinksContainer = styled.header`
 const AuthStatusContainer = styled.header`
 	background-color: var(--primary);
 	color: var(--white);
-	font-size: 10px;
+	font-size: 15px;
 	display: flex;
 	flex-direction: column;
 	width: 20%;
 	align-items: center;
+	@media (max-width: 768px) {
+		font-size: 10px;
+		width:40%;
+  	}
 `;
 
 export default function Header() {
