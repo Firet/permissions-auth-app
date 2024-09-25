@@ -3,39 +3,36 @@ import styled from '@emotion/styled';
 import { StyledLink } from '../atoms/StyledLink/SyledLink';
 
 const HeaderContainer = styled.header`
-	background-color: var(--secondary);
-	color: var(--white);
+	background-color: var(--white);
+	color: var(--black);
 	font-weight: 700;
 	display: flex;
 	flex-direction: row;
+	border:1px solid var(--primary);
 	width: 100%;
-	justify-content: space-between;
 	align-items: center;
+	height: 100px;
 `;
 
 
 const LinksContainer = styled.header`
-	background-color: var(--secondary);
-	color: var(--white);
+	background-color: var(--white);
+	color: var(--black);
 	font-size: 20px;
-	// font-weight: 500;
 	display: flex;
 	flex-direction: row;
 	width: 80%;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
-	padding: 30px;
+	padding-left: 20%;
 `;
 
 const AuthStatusContainer = styled.header`
 	background-color: var(--primary);
 	color: var(--white);
-	font-weight: 600;
 	font-size: 10px;
 	display: flex;
 	flex-direction: column;
-	border:1px solid var(--primary);
-	// border-radius: 10px;
 	width: 20%;
 	align-items: center;
 `;
