@@ -22,8 +22,8 @@ export default function LoginPage() {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background-color: #bdbfc0;
-		color: white;
+		background-color: var(--secondary);
+		color: var(--white);
 		min-height: 400px;
 		width: 20%;
 		border-radius: 30px;

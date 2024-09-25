@@ -30,7 +30,7 @@ function Dashbaord({ dispatch, loading, users, hasErrors }) {
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
-		background-color: #FBFBFE;
+		background-color: var(--ternary);
 		width: 100%;
 		min-height: 100vh;
 	`;
@@ -38,7 +38,7 @@ function Dashbaord({ dispatch, loading, users, hasErrors }) {
 		display: flex;
 		justify-content: center;
 		width: 100%;
-		background-color: #FBFBFE;
+		background-color: var(--ternary);
 	`;
 
 	const renderUsers = () => {

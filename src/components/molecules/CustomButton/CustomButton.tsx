@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 import { Button } from '@mui/material';
 
 const StyledButton = styled(Button)`
-	background-color: white;
-	color: grey;
+	background-color: var(--white);
+	color: var(--black);
 	margin: 10px;
 	&:hover {
-		background-color: #ffff80;
-		color: black;
+		background-color: var(--another);
+		color: var(--black);
 	}
 `;
 

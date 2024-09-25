@@ -6,7 +6,7 @@ const NoAccessContainer = styled.div`
 `;
 
 const NoAccessCard = styled.div`
-	background-color: #bdbfc0;
+	background-color: var(--secondary);
 	margin-top: 200px;
 	min-height: 40%;
 	border-radius: 30px;
