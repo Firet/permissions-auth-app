@@ -3,10 +3,9 @@ import { useAuth } from '../hooks/useAuth';
 import { StyledLink } from '../components/atoms/StyledLink/SyledLink';
 import styled from '@emotion/styled';
 
-
 export function AuthStatus() {
 	const auth = useAuth();
-	const isAdmin = auth.authState.isAdmin
+	const isAdmin = auth.authState.isAdmin;
 
 	const StatusContainer = styled.div`
 		display: flex;
@@ -27,13 +26,11 @@ export function AuthStatus() {
 
 	return (
 		<>
-			<StatusContainer>
-				User: {auth.user}{' '}
-			</ StatusContainer>
+			<StatusContainer>User: {auth.user} </StatusContainer>
 			<StatusContainer>
 				Role: {isAdmin ? 'Administrator' : 'User'}
-			</ StatusContainer>
+			</StatusContainer>
 			<Logout />
-		</ >
+		</>
 	);
 }

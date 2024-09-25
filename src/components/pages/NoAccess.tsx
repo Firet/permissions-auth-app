@@ -15,15 +15,12 @@ const NoAccessCard = styled.div`
 `;
 
 export function NoAccess() {
-    return (<NoAccessContainer>
-        <NoAccessCard>
-			<p>
-            You do not have access.
-			</p>
-			<p>
-			Login as administrator to see this section.
-			</p>
-        </NoAccessCard>
-    </NoAccessContainer>);
+	return (
+		<NoAccessContainer>
+			<NoAccessCard>
+				<p>You do not have access.</p>
+				<p>Login as administrator to see this section.</p>
+			</NoAccessCard>
+		</NoAccessContainer>
+	);
 }
-

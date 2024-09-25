@@ -7,13 +7,12 @@ import { useAuth } from '../../../hooks/useAuth';
 import { CustomButton } from '../CustomButton/CustomButton';
 
 export default function CustomForm() {
-
 	const FormContainer = styled.form`
-	display: flex;
-	flex-direction: column;
-	// background-color: var(--white);
-	margin: 10px;
-`;
+		display: flex;
+		flex-direction: column;
+		// background-color: var(--white);
+		margin: 10px;
+	`;
 
 	const FormInnerContainer = styled.div`
 		display: flex;
@@ -23,7 +22,6 @@ export default function CustomForm() {
 	const StyledTextField = styled(TextField)`
 		margin-top: 10px;
 	`;
-
 
 	const navigate = useNavigate();
 	const auth = useAuth();
@@ -76,8 +74,12 @@ export default function CustomForm() {
 					error={!!errors.password}
 					helperText={errors.password?.message}
 				/>
-				<CustomButton type="submit" color="primary" label="Log In" onClick={() => null}>
-				</CustomButton>
+				<CustomButton
+					type="submit"
+					color="primary"
+					label="Log In"
+					onClick={() => null}
+				></CustomButton>
 			</FormInnerContainer>
 		</FormContainer>
 	);

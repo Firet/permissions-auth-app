@@ -8,12 +8,11 @@ const HeaderContainer = styled.header`
 	font-weight: 700;
 	display: flex;
 	flex-direction: row;
-	border:1px solid var(--primary);
+	border: 1px solid var(--primary);
 	width: 100%;
 	align-items: center;
 	height: 100px;
 `;
-
 
 const LinksContainer = styled.header`
 	background-color: var(--white);
@@ -23,7 +22,7 @@ const LinksContainer = styled.header`
 	width: 80%;
 	justify-content: space-around;
 	align-items: center;
-	`;
+`;
 
 const AuthStatusContainer = styled.header`
 	background-color: var(--primary);
@@ -35,8 +34,8 @@ const AuthStatusContainer = styled.header`
 	align-items: center;
 	@media (max-width: 768px) {
 		font-size: 10px;
-		width:40%;
-  	}
+		width: 40%;
+	}
 `;
 
 export default function Header() {
@@ -50,6 +49,6 @@ export default function Header() {
 			<AuthStatusContainer>
 				<AuthStatus />
 			</AuthStatusContainer>
-		</ HeaderContainer>
+		</HeaderContainer>
 	);
 }

@@ -1,5 +1,4 @@
 export const AddUser = ({ onAdd }) => {
-
 	const handleOnSubmit = (evt: any) => {
 		evt.preventDefault();
 		onAdd(evt.target.name.value, evt.target.email.value);

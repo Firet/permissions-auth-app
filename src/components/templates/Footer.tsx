@@ -14,5 +14,9 @@ const StyledFooter = styled.footer`
 
 export default function Footer() {
 	const currentYear = new Date().getFullYear();
-	return <StyledFooter>Copy Left {currentYear}, this page is open source.</StyledFooter>;
+	return (
+		<StyledFooter>
+			Copy Left {currentYear}, this page is open source.
+		</StyledFooter>
+	);
 }

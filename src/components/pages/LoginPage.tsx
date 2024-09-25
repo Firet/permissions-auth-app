@@ -30,9 +30,9 @@ export default function LoginPage() {
 		box-shadow: 10px 10px lightblue;
 		padding: 5px;
 		@media (max-width: 768px) {
-			width: 60%
-  		}
-		`;
+			width: 60%;
+		}
+	`;
 
 	useEffect(() => {
 		if (auth.user) {

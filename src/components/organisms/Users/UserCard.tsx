@@ -27,8 +27,8 @@ const StyledCard = styled(Card)`
 		color: var(--black);
 	}
 	@media (max-width: 768px) {
-	width: 50%;
-  	}
+		width: 50%;
+	}
 `;
 
 export const UserCard = ({ name, email, id, onEdit, onDelete }) => {
@@ -65,13 +65,12 @@ export const UserCard = ({ name, email, id, onEdit, onDelete }) => {
 						defaultValue={email}
 						fullWidth
 					/>
-					<CustomButton 
+					<CustomButton
 						type="submit"
 						color="error"
 						label="Save"
 						onClick={() => null}
-						>
-					</CustomButton>
+					></CustomButton>
 				</StyledForm>
 			) : (
 				<StyledCard className="user">
@@ -84,15 +83,13 @@ export const UserCard = ({ name, email, id, onEdit, onDelete }) => {
 								color="warning"
 								label="Edit"
 								onClick={handleEdit}
-							>
-							</CustomButton>
+							></CustomButton>
 							<CustomButton
 								type=""
 								color="error"
 								label="Delete"
 								onClick={handleDelete}
-							>
-							</CustomButton>
+							></CustomButton>
 						</div>
 					)}
 				</StyledCard>

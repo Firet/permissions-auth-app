@@ -11,7 +11,9 @@ export default function Logout() {
 				onClick={() => {
 					auth.signout(() => navigate('/'));
 				}}
-			>Logout</button>
+			>
+				Logout
+			</button>
 		</>
 	);
 }
