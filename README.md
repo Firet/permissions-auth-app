@@ -1,3 +1,5 @@
+Podés ver esta app acá: [https://auth-app-git-main-firets-projects.vercel.app/](https://auth-app-git-main-firets-projects.vercel.app/)
+
 ## 🔵 Aplicación Web con Login Y Roles. 
 
 Esta es una App web con un sistema de autenticación con roles.
@@ -8,22 +10,23 @@ Esta es una App web con un sistema de autenticación con roles.
 - Se accede a información obtenida desde esta [API](https://jsonplaceholder.typicode.com/).
 - La información obtenida en la API la guardé en el estado global usando Redux.
 - Con flexbox garanticé que se vea bien en diferentes tipos de patanllas: monitores grandes🖥️, celulares📱 y laptops💻. 
+- Usé Material y Emotion CSS(parecido a styled components)
 - Los elementos visuales se probaron en varios navegadores.
 - Corrí prettier para hacer que el código sea consistente a través de toda la aplicación.
 
 ## Estructura de Carpetas
 - /auth: donde guardé todos los componentes relacionados con la autenticación
 - /types: guardé los tipos y las interfaces
-- /pages: son las diferentes vistas de la app
 - /hooks: en esta carpeta está el hook useAuth
 - redux: carpeta dedicada a componentes de redux: action y reducers
-- /components: donde guardé todos los componentes reusables. Serán organizados según los principios de Atomic Design.
+- /components: donde guardé todos los componentes, están organizados en subcarpetas según los principios de Atomic Design
 
 ## 🏃‍♂️¿Cómo correr esta app?
 
 🚀 Primero, levantá el servidor de desarrollo:
 
 ```bash
+npm install
 npm run dev
 ```
 
