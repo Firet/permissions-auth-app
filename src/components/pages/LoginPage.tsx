@@ -29,7 +29,10 @@ export default function LoginPage() {
 		border-radius: 30px;
 		box-shadow: 10px 10px lightblue;
 		padding: 5px;
-`;
+		@media (max-width: 768px) {
+			width: 60%
+  		}
+		`;
 
 	useEffect(() => {
 		if (auth.user) {

@@ -26,6 +26,9 @@ const StyledCard = styled(Card)`
 		background-color: var(--secondary);
 		color: var(--black);
 	}
+	@media (max-width: 768px) {
+	width: 50%;
+  	}
 `;
 
 export const UserCard = ({ name, email, id, onEdit, onDelete }) => {
