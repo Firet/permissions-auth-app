@@ -17,7 +17,7 @@ const StyledCard = styled(Card)`
 	font-weight: 600;
 	align-content: center;
 	text-align: center;
-	width: 20%;
+	width: 30%;
 	height: 100px;
 	margin: 10px;
 	padding: 10px;

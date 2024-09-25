@@ -25,7 +25,7 @@ export default function LoginPage() {
 		background-color: var(--secondary);
 		color: var(--white);
 		min-height: 400px;
-		width: 20%;
+		width: 40%;
 		border-radius: 30px;
 		box-shadow: 10px 10px lightblue;
 		padding: 5px;
