@@ -18,14 +18,12 @@ const HeaderContainer = styled.header`
 const LinksContainer = styled.header`
 	background-color: var(--white);
 	color: var(--black);
-	font-size: 20px;
 	display: flex;
 	flex-direction: row;
 	width: 80%;
 	justify-content: space-around;
 	align-items: center;
-	padding-left: 20%;
-`;
+	`;
 
 const AuthStatusContainer = styled.header`
 	background-color: var(--primary);
