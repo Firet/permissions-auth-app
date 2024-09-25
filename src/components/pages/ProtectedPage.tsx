@@ -13,7 +13,7 @@ const DashboardContainer = styled.div`
 export default function ProtectedPage({ title }) {
 	return (
 		<>
-			<h3>{title}</h3>
+			{/* <h3>{title}</h3> */}
 			<DashboardContainer>
 				<Dashboard />
 				<Outlet />

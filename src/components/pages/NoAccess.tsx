@@ -21,7 +21,7 @@ export function NoAccess() {
             You do not have access.
 			</p>
 			<p>
-			Please login as administrator to be able to enter.
+			Login as administrator to see this section.
 			</p>
         </NoAccessCard>
     </NoAccessContainer>);
