@@ -21,11 +21,10 @@ const LinksContainer = styled.header`
 	// font-weight: 500;
 	display: flex;
 	flex-direction: row;
-	width: 100%;
+	width: 80%;
 	justify-content: space-between;
 	align-items: center;
 	padding: 30px;
-	margin-left: 20%;
 `;
 
 const AuthStatusContainer = styled.header`
