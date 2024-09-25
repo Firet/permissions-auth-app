@@ -8,6 +8,13 @@ import { CustomButton } from '../CustomButton/CustomButton';
 
 export default function CustomForm() {
 
+	const FormContainer = styled.form`
+	display: flex;
+	flex-direction: column;
+	// background-color: var(--white);
+	margin: 10px;
+`;
+
 	const FormInnerContainer = styled.div`
 		display: flex;
 		flex-direction: column;
@@ -34,7 +41,7 @@ export default function CustomForm() {
 		}
 	};
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<FormContainer onSubmit={handleSubmit(onSubmit)}>
 			<FormInnerContainer>
 				<TextField
 					label="Username"
@@ -72,6 +79,6 @@ export default function CustomForm() {
 				<CustomButton type="submit" color="primary" label="Log In" onClick={() => null}>
 				</CustomButton>
 			</FormInnerContainer>
-		</form>
+		</FormContainer>
 	);
 }

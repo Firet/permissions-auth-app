@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 
 const StyledFooter = styled.footer`
 	display: flex;
-	background-color: var(--secondary);
-	color: var(--white);
+	background-color: lightblue;
+	color: var(--black);
 	font-weight: 600;
 	width: 100%;
 	height: 100px;

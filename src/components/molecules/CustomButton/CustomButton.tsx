@@ -6,7 +6,7 @@ const StyledButton = styled(Button)`
 	color: var(--black);
 	margin: 10px;
 	&:hover {
-		background-color: var(--another);
+		background-color: var(--accent);
 		color: var(--black);
 	}
 `;

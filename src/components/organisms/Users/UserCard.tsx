@@ -13,7 +13,7 @@ const StyledForm = styled.form`
 
 const StyledCard = styled(Card)`
 	background-color: var(--primary);
-	color: black;
+	color: white;
 	font-weight: 600;
 	align-content: center;
 	text-align: center;
@@ -24,7 +24,7 @@ const StyledCard = styled(Card)`
 	&:hover {
 		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 		background-color: var(--secondary);
-		color: var(--white);
+		color: var(--black);
 	}
 `;
 

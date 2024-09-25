@@ -23,7 +23,7 @@ export default function LoginPage() {
 		align-items: center;
 		justify-content: center;
 		background-color: var(--secondary);
-		color: var(--white);
+		color: var(--black);
 		min-height: 400px;
 		width: 40%;
 		border-radius: 30px;

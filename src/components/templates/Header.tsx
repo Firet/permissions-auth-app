@@ -9,7 +9,7 @@ const HeaderContainer = styled.header`
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 `;
 
@@ -18,24 +18,25 @@ const LinksContainer = styled.header`
 	background-color: var(--secondary);
 	color: var(--white);
 	font-size: 20px;
-	font-weight: 700;
+	// font-weight: 500;
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+	padding: 30px;
 	margin-left: 20%;
 `;
 
 const AuthStatusContainer = styled.header`
 	background-color: var(--primary);
-	color: var(--black);
+	color: var(--white);
 	font-weight: 600;
 	font-size: 10px;
 	display: flex;
 	flex-direction: column;
-	border:1px solid black;
-	border-radius: 10px;
+	border:1px solid var(--primary);
+	// border-radius: 10px;
 	width: 20%;
 	align-items: center;
 `;
