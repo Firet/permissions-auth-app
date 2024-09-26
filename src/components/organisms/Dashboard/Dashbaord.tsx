@@ -21,7 +21,7 @@ function Dashbaord({ dispatch, loading, users, hasErrors }) {
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
-		background-color: var(--ternary);
+		background-color: var(--primary);
 		width: 100%;
 		min-height: 100vh;
 	`;

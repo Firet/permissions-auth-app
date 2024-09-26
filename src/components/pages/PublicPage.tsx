@@ -10,7 +10,7 @@ export default function PublicPage() {
 		width: 100%;
 		min-height: 100vh;
 		font-weight: 600;
-		border: 2px solid var(--primary);
+		border: 2px solid var(--ternary);
 		padding: 2rem;
 	`;
 
@@ -23,7 +23,7 @@ export default function PublicPage() {
 	`;
 
 	const SpanText = styled.span`
-		background-color: var(--primary);
+		background-color: var(--accent);
 	`;
 
 	return (

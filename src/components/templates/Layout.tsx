@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Header from './Header';
 
 const LayoutContainer = styled.section`
-	background-color: var(--white);
+	background-color: var(--primary);
 	display: flex;
 	flex-direction: column;
 	align-items: center;

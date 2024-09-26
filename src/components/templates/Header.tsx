@@ -8,7 +8,6 @@ const HeaderContainer = styled.header`
 	font-weight: 700;
 	display: flex;
 	flex-direction: row;
-	border: 1px solid var(--primary);
 	width: 100%;
 	align-items: center;
 	height: 100px;

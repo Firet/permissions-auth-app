@@ -27,7 +27,7 @@ export default function LoginPage() {
 		min-height: 400px;
 		width: 40%;
 		border-radius: 30px;
-		box-shadow: 10px 10px lightblue;
+		box-shadow: 10px 10px var(--accent);
 		padding: 5px;
 		@media (max-width: 768px) {
 			width: 60%;
