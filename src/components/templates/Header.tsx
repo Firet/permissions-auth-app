@@ -43,7 +43,7 @@ export default function Header() {
 		<HeaderContainer>
 			<LinksContainer>
 				<StyledLink to="/public">Home</StyledLink>
-				<StyledLink to="/protected">Dashboard Center</StyledLink>
+				<StyledLink to="/protected">User List</StyledLink>
 				<StyledLink to="/admin">Admin Page</StyledLink>
 			</LinksContainer>
 			<AuthStatusContainer>
