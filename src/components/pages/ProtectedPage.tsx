@@ -8,12 +8,12 @@ const DashboardContainer = styled.div`
 	justify-content: center;
 	background-color: var(--another);
 	width: 100%;
+	margin-top: 30px;
 `;
 
-export default function ProtectedPage({ title }) {
+export default function ProtectedPage() {
 	return (
 		<>
-			<h3>{title}</h3>
 			<DashboardContainer>
 				<Dashboard />
 				<Outlet />
