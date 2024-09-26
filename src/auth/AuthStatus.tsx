@@ -12,6 +12,7 @@ export function AuthStatus() {
 		flex-direction: column;
 		justify-items: center;
 		align-items: center;
+		color: var(--black);
 	`;
 
 	if (!auth.user) {

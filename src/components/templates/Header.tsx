@@ -24,7 +24,7 @@ const LinksContainer = styled.header`
 `;
 
 const AuthStatusContainer = styled.header`
-	background-color: var(--primary);
+	background-color: var(--white);
 	color: var(--white);
 	font-size: 15px;
 	display: flex;
