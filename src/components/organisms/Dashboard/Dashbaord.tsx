@@ -1,21 +1,12 @@
 import { connect } from 'react-redux';
 import {
-	addUser,
 	deleteUserWithId,
 	editUser,
 } from '../../../redux/actions/userActions';
-import { AddUser } from '../Users/AddUser';
 import UserCard from '../Users/UserCard';
-import { useAuth } from '../../../hooks/useAuth';
 import styled from '@emotion/styled';
 
 function Dashbaord({ dispatch, loading, users, hasErrors }) {
-	const auth = useAuth();
-	const isAdmin = auth.authState.isAdmin;
-
-	const onAdd = (name, email) => {
-		dispatch(addUser({ name, email }));
-	};
 
 	const onEdit = async (id, name, email) => {
 		dispatch(editUser({ id, name, email }));
@@ -33,12 +24,6 @@ function Dashbaord({ dispatch, loading, users, hasErrors }) {
 		background-color: var(--ternary);
 		width: 100%;
 		min-height: 100vh;
-	`;
-	const AddUserContainer = styled.div`
-		display: flex;
-		justify-content: center;
-		width: 100%;
-		background-color: var(--ternary);
 	`;
 
 	const renderUsers = () => {
@@ -60,11 +45,6 @@ function Dashbaord({ dispatch, loading, users, hasErrors }) {
 
 	return (
 		<RenderCardsContainer>
-			{isAdmin && (
-				<AddUserContainer>
-					<AddUser onAdd={onAdd} />
-				</AddUserContainer>
-			)}
 			{renderUsers()}
 		</RenderCardsContainer>
 	);
