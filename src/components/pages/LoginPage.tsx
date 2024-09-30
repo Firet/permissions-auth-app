@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import CustomForm from '../molecules/CustomForm/CustomForm';
+import LoginForm from '../molecules/LoginForm/LoginForm';
 import styled from '@emotion/styled';
 import { useAuth } from '../../hooks/useAuth';
 
@@ -44,7 +44,7 @@ export default function LoginPage() {
 		<LoginContainer>
 			<LoginCard>
 				<h3>Login Page</h3>
-				<CustomForm />
+				<LoginForm />
 			</LoginCard>
 		</LoginContainer>
 	);

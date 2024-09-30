@@ -6,11 +6,10 @@ import { LoginInput } from '../../../types/LoginInputType';
 import { useAuth } from '../../../hooks/useAuth';
 import { CustomButton } from '../CustomButton/CustomButton';
 
-export default function CustomForm() {
+export default function LoginForm() {
 	const FormContainer = styled.form`
 		display: flex;
 		flex-direction: column;
-		// background-color: var(--white);
 		margin: 10px;
 	`;
 
