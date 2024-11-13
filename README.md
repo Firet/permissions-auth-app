@@ -1,35 +1,40 @@
-Podés ver y probar esta app acá: [https://auth-app-demo.vercel.app/](https://auth-app-demo.vercel.app/)
+You can see and check this app here: [https://auth-app-demo.vercel.app/](https://auth-app-demo.vercel.app/)
 
 
-## 🔵 Aplicación Web con Login Y Roles.
+## 🔵 Login Web App.
 
-Esta es una App web con un sistema de autenticación con roles.
+This is a web app with a role-based authentication system.
+You can clone this repo and use it in your app-
 
--   Hay dos tipos de usuarios diferentes: el usuario con el rol "admin" puede realizar operaciones de creación, edición y eliminación, mientras que el usuario común solo tiene acceso a la lectura de datos.
--   Usé Context API para determinar los roles del usuario.
--   Utilicé react-router para mostrar u ocultar rutas a determinados usuarios.
--   Se accede a información obtenida desde esta [API](https://jsonplaceholder.typicode.com/).
--   La información obtenida en la API la guardé en el estado global usando Redux.
--   Con flexbox garanticé que se vea bien en diferentes tipos de patanllas: monitores grandes🖥️, celulares📱 y laptops💻.
--   Usé Material y Emotion CSS(parecido a styled components)
--   Los elementos visuales se probaron en varios navegadores.
--   Corrí prettier para hacer que el código sea consistente a través de toda la aplicación.
 
-## Estructura de Carpetas
+## Features
+- There are two different types of users: the user with the “admin” role can perform create, edit and delete operations, while the common user only has access to read data.
+- I used Context API to determine the user roles.
+- I used react-router to show or hide routes to certain users.
+- I obtained information from this [API](https://jsonplaceholder.typicode.com/)
+- The information obtained from the API is stored in the global state using Redux.
+- With flexbox I ensured that it looks good on different types of devices: big screens🖥️, cell phones📱 and laptops💻.
+- I used Material and Emotion CSS (similar to styled components).
+- The visual elements were tested in several browsers.
+- I ran prettier to make the code consistent throughout the application.
 
--   /auth: donde guardé todos los componentes relacionados con la autenticación
--   /types: guardé los tipos y las interfaces
--   /hooks: en esta carpeta está el hook useAuth
--   redux: carpeta dedicada a componentes de redux: action y reducers
--   /components: donde guardé todos los componentes, están organizados en subcarpetas según los principios de Atomic Design
+## Folder structure
 
-## 🏃‍♂️¿Cómo correr esta app?
+- /auth: where I stored all the components related to authentication
+- /types: where I stored the types and interfaces
+- /hooks: in this folder is the hook useAuth
+- redux: folder dedicated to redux components: action and reducers
+- /components: where I saved all the components, they are organized in subfolders according to the Atomic Design principles.
 
-🚀 Primero, levantá el servidor de desarrollo:
 
-```bash
+
+## 🏃‍♂️How to run this app?
+
+🚀 First, launch the development server:
+
+````bash
 npm install
 npm run dev
 ```
 
-💻 Después, podés abrir [localhost:5173](http://localhost:5173) con tu navegador para ver el resultado.
+💻 Then, you can open [localhost:5173](http://localhost:5173) with your browser to see the result.
