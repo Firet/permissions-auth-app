@@ -32,7 +32,7 @@ You can clone this repo and use it in your app-
 
 🚀 First, launch the development server:
 
-````bash
+```bash
 npm install
 npm run dev
 ```
